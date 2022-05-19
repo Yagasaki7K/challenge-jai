@@ -7,6 +7,11 @@ Building a project testing to consume a API + User Experience
 - Feature de cadastro de login através do formulário, sem precisar de um arquivo de configuração, usando a interação do React com o jai-sdk
 - Fazer o login usando a chave de autenticação do jai-sdk em comunicação com a API para verificar a existência da chave e autenticar.
 - Feature de mostrar/esconder chave de acesso
+- Puxar as imagens diretamente da API usando autenticação com a chave do usuário
+- Responsividade
+- Abordar uma maneira melhor de selecionar imagens
+- Acesso ao /dashboard apenas com autenticação, se falhar, retornar ao login
+- Utilidade o .env de forma adequada (esconder JAI_API_KEY/JAI_ENVIRONMENT_NAME)
 
 # A Proposta
 

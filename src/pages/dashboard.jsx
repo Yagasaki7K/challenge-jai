@@ -2,7 +2,26 @@ import { React, useState, useContext } from 'react'
 // import { KeyValue } from '..';
 import DashboardDetails from '../components/DashboardDetails'
 
-const api = 'https://myceliademo.blob.core.windows.net/fashion-imgs/images/10000.jpg'
+import axios from 'axios'
+
+var config = {
+    method: 'get',
+    url: `https://mycelia.azure-api.net/validation/productimages/10000.jpg`,
+    headers: {
+        'Auth': `fa48e535eaa44ef49f37557751eeffd4`,
+        'Content-Type': 'application-json'
+    }
+};
+
+axios(config)
+
+.then(function (response) {
+    console.log(JSON.stringify(response.data));
+    console.log(data)
+})
+.catch(function (error) {
+    console.log(error);
+});
 
 const dashboard = () => {
 
@@ -37,6 +56,8 @@ const dashboard = () => {
         setStatus(<strong className="status">ONLINE</strong>)
         setCanOrNot('PODE')
     }
+
+    const api = 'https://myceliademo.blob.core.windows.net/fashion-imgs/images/10000.jpg'
 
     fetch(api)
         .then(data => {
