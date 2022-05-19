@@ -2,30 +2,6 @@ import { React, useState, useContext } from 'react'
 // import { KeyValue } from '..';
 import DashboardDetails from '../components/DashboardDetails'
 
-// Uncaught ReferenceError: process is not defined // vvvvvvvvvvvvvv
-// import 'dotenv/config'
-
-// Uncaught Error: Built-in TLD list disabled // vvvvvvvvvvvvvvvvvvv
-// import { getStatus, authenticate, authenticateFromEnvironmentVariable, jaiEnvironmentFromEnvironmentVariable,
-//     insertData, getFields, isDatabaseNameValid, checkInsertedData, addData } from 'jai-sdk'
-
-// Uncaught ReferenceError: process is not defined // vvvvvvvvvvvvvv
-// if (process.env.JAI_API_KEY) {
-//     authenticateFromEnvironmentVariable()
-//     console.debug(authMessage());
-// }
-
-// if (process.env.JAI_ENVIRONMENT_NAME) {
-//     jaiEnvironmentFromEnvironmentVariable()
-//     console.debug(authMessage());
-// }
-
-// app.get('/get-status', (req, res) => {
-//     getStatus().then(data => {
-//         res.send(data);
-//     })
-// })
-
 const api = 'https://myceliademo.blob.core.windows.net/fashion-imgs/images/10000.jpg'
 
 const dashboard = () => {
@@ -63,13 +39,13 @@ const dashboard = () => {
     }
 
     fetch(api)
-    .then(data => { 
-        if(data.status === 200) {
-            setStatus('ONLINE')
-        } else {
-            setStatus('OFFLINE')
-        }
-    })
+        .then(data => {
+            if (data.status === 200) {
+                setStatus('ONLINE')
+            } else {
+                setStatus('OFFLINE')
+            }
+        })
 
     return (
         <DashboardDetails>
@@ -122,7 +98,7 @@ const dashboard = () => {
                 </div>
 
                 <hr />
-            <div className="copyright">Desenvolvido por Anderson Marlon - Teste Técnico da JAI - Realizado em Maio de 2022</div>
+                <div className="copyright">Desenvolvido por Anderson Marlon - Teste Técnico da JAI - Realizado em Maio de 2022</div>
             </div>
 
         </DashboardDetails>

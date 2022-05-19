@@ -8,10 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1",
     "jai-sdk": "^0.26.0",
-    "jest": "^28.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
