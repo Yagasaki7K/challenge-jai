@@ -1,33 +1,38 @@
 import AppDetails from './components/AppDetails';
-
-function onSubmit() {
-    console.log('submit');
-}
-
-function onForget() {
-    return (
-        <div>
-            <h1>Forget</h1>
-        </div>
-    );
-}
-
-function onSignUp() {
-
-}
+import { useContext } from 'react';
 
 const Login = () => {
+
+    function onSubmit() {
+        let key = document.getElementById('key').value;
+        // useContext(KeyValue) = key
+        
+        if ((key != 0) && (key != '') && (key != null) && (key != undefined))  {
+            // setKeyDefined(key);
+            window.location.href = "/dashboard";
+        }
+    }
+
     return (
         <AppDetails>
+            <img src="/src/assets/logo.png"/>
             <h2>Área de login</h2>
-            <form>
-                <input type="text" placeholder="Enter your KEY" />
-                <input type="text" placeholder="Enter your Environment" />
-                <button onClick={onSubmit}>Submit</button>
-            </form>
+            <div className="form">
+                <p>Coloque sua chave</p>
+                <input type="password" id="key" placeholder="Insira sua chave de autenticação" />
+                <button onClick={onSubmit}>Logar</button>
+            </div>
 
             <div className="linkunder">
-                <a onClick={onForget}>Esqueci a senha</a> - <a onClick={onSignUp}>Cadastre-se</a>
+                <details>
+                    <summary>Esqueci a senha</summary>
+                    <p>Você poderá a chave de acesso única através do seu e-mail, verifique a caixa de SPAM. Se não estiver disponível, cadastre uma nova e verifique se o e-mail foi digitado corretamente.</p>
+                </details>
+
+                <details>
+                    <summary>Cadastre-se</summary>
+                    <p>Para cadastrar uma nova senha, você pode acessar nossa <a href="https://get-free-auth-key.unicornplatform.page/" target="_blank">área de cadastro</a></p>
+                </details>
             </div>
         </AppDetails>
     );

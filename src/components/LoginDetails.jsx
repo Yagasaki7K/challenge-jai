@@ -6,7 +6,7 @@ const AppDetails = styled.div`
     align-items: center;
     flex-direction: column;
 
-    margin-top: 10rem;
+    margin-top: 5rem;
 
     img {
         width: 100px;
@@ -25,7 +25,7 @@ const AppDetails = styled.div`
             border: none;
             height: 20px;
             padding: 3px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             width: 200px;
         }
 
@@ -58,6 +58,12 @@ const AppDetails = styled.div`
             margin-bottom: 20px;
 
             summary {
+                color: #e5e5e5;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            a {
                 color: #e5e5e5;
                 cursor: pointer;
                 text-decoration: underline;

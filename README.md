@@ -4,6 +4,9 @@ Building a project testing to consume a API + User Experience
 # O que faltou a ser adicionado?
 - Typescript posteriormente para tipar as variáveis
 - Testes unitários
+- Feature de cadastro de login através do formulário, sem precisar de um arquivo de configuração, usando a interação do React com o jai-sdk
+- Fazer o login usando a chave de autenticação do jai-sdk em comunicação com a API para verificar a existência da chave e autenticar.
+- Feature de mostrar/esconder chave de acesso
 
 # A Proposta
 
@@ -12,7 +15,7 @@ Sobre o modelo treinado e como consumi-lo:
 São 1000 imagens do Fashion Dataset treinadas com a JAI usando o modelo pré-treinado Resnet50 e salvas na collection chamada "x" 
 Todos os IDs dessa collection estão mapeadas para as imagens originais aqui: x (basta trocar o 10000 por qualquer id da collection para retornar a imagem correta) 
 
-Você poderá consumir o modelo já treinado usando a Auth_Key"x" 
+Você poderá consumir o modelo já treinado usando a Auth_Key "x" 
 
 Interface - Você deverá criar um buscador de roupas/itens. O usuário deve ser capaz de: 
 
