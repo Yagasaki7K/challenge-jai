@@ -1,5 +1,4 @@
 import AppDetails from './components/AppDetails';
-import { useContext } from 'react';
 
 const Login = () => {
 

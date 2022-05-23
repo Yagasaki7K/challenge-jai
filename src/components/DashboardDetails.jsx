@@ -89,7 +89,7 @@ const DashboardDetails = styled.div`
 
         .contentBox-alt {
             display: flex;
-            margin-top: -140px;
+            margin-top: 0px;
 
             .box-center {
                 button {

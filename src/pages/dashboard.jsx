@@ -1,29 +1,34 @@
-import { React, useState, useContext } from 'react'
-// import { KeyValue } from '..';
+import { React, useEffect, useState } from 'react'
 import DashboardDetails from '../components/DashboardDetails'
 
-import axios from 'axios'
+function transferValues() {
+    let Auth = 'fa48e535eaa44ef49f37557751eeffd4';
+    let bodyValue = '10000'
 
-var config = {
-    method: 'get',
-    url: `https://mycelia.azure-api.net/validation/productimages/10000.jpg`,
-    headers: {
-        'Auth': `fa48e535eaa44ef49f37557751eeffd4`,
-        'Content-Type': 'application-json'
-    }
+    return { Auth, bodyValue }
+}
+
+var myHeaders = new Headers();
+myHeaders.append("Auth", transferValues().Auth);
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+    method: 'PUT',
+    headers: myHeaders,
+    body: transferValues().bodyValue,
+    redirect: 'follow'
 };
 
-axios(config)
-
-.then(function (response) {
-    console.log(JSON.stringify(response.data));
-    console.log(data)
-})
-.catch(function (error) {
-    console.log(error);
-});
+fetch("https://mycelia.azure-api.net/similar/id/productimages?top_k=5", requestOptions)
+    .then(response => response.json())
+    .then(result => {
+        let firstID = result
+        console.log(firstID)
+    })
+    .catch(error => console.log('error', error));
 
 const dashboard = () => {
+    const [value, setValue] = useState('')
 
     // const value = useContext(KeyValue);
 
@@ -98,7 +103,7 @@ const dashboard = () => {
                     </div>
 
                     <div className="box-right">
-                        <img src={`https://myceliademo.blob.core.windows.net/fashion-imgs/images/${valueImage}.jpg`} />
+                        <img src={``} />
                     </div>
                 </div>
 
